@@ -1,0 +1,27 @@
+html body {
+  background-color: #F7F6EF;
+}
+
+.main-brand {
+  background-color: #7674E4;
+}
+
+.light-accent {
+  background-color: #74A4E4;
+}
+.dark-accent {
+  background-color: #7A76A1;
+}
+.dark-shade {
+  background-color: #2661B1;
+}
+
+.text-main-brand {
+  color: #7674E4;
+}
+.text-light-shade {
+  color: #F7F6EF;
+}
+.text-dark-shade {
+  color: #2661B1;
+}
