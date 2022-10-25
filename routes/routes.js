@@ -6,7 +6,9 @@ const users = require('../users.json').users
 // POST
 router.post('/post', async (req,res) => {
     // res.send('POST API')
+    console.log(req.body.name)
     const name = req.body.name.toLowerCase()
+    console.log(name)
     const data = new Model({
         name: name,
         weekdays: req.body.weekdays

@@ -45,12 +45,15 @@ export default {
     }
   },
   methods: {
-    submit(user) {
+    async submit(user) {
       const postContents = {
-        user,
+        name: user,
         weekdays: this.weekdays
       }
       console.log(postContents)
+      await axios.post('http://localhost:3000/api/post', postContents).then(res=> {
+        console.log(res)
+      })
     },
     async getData() {
       this.data = await axios.get('http://localhost:3000/api/getAll')
