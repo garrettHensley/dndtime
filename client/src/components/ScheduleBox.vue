@@ -18,14 +18,27 @@
         </div>
       </div>
     </div>
-    <div class="container light-shade shadow rounded text-center px-3" v-else>
+    <!-- <div class="container my-3" v-else>
+      <div class="container light-shade shadow rounded text-center px-3">
         <div class="row">
           <div class="col mt-1">
             <p class="lead text-dark-accent display-6"> Availability </p>
-            <p class="lead text-dark-accent">No Upcoming Sessions</p>
+            <p class="lead">No Upcoming Sessions</p>
           </div>
         </div>
-    </div>
+        
+        <div class="row py-2 text-light-shade">
+          <div class="col" v-for="(day, index) in weekdays">
+            <DayCard :day="day.day" :selected="day.selected" :index="index" @selector="selector" />
+          </div>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-6">
+            <InputControl @submit="submit" :valid="valid" :upcomingSessions="upcomingSessions" />
+          </div>
+        </div>
+      </div>
+    </div> -->
   </template>
   
   <script>
@@ -65,14 +78,12 @@
           console.log('we have an error')
         })
       },
-      async getData() {
-        this.data = await axios.get('http://localhost:3000/api/getAll')
-        // console.log(this.data)
-      },
       async getSessions() {
         await axios.get('http://localhost:3000/api/session').then(res => {
           res.data.forEach(item => {
-            this.upcomingSessions.push(item.weekOfDate)
+            if(!item.finalSchedule) {
+              this.upcomingSessions.push(item.weekOfDate)
+            }
           })
         })
       },
@@ -81,7 +92,6 @@
       }
     },
     mounted() {
-      this.getData()
       this.getSessions()
     }
   }

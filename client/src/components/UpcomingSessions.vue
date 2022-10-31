@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <div class="container light-shade shadow rounded text-center px-3">
+    <div class="container light-shade shadow rounded px-3">
       <div class="row">
         <div class="col mt-1">
-          <p class="lead text-dark-shade display-6"> Upcoming Sessions </p>
+          <p class="lead text-dark-shade display-6 text-center"> Upcoming Sessions </p>
         </div>
         <Session-box v-for="session in upcomingSessions" :session="session" />
       </div>
