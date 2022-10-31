@@ -1,27 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
 html body {
-  background-color: #F7F6EF;
+  background-color: #353f4f;
+  font-family: 'Raleway';
 }
 
 .main-brand {
-  background-color: #7674E4;
+  background-color: #00B3FF;
+}
+
+.bg-primary {
+  background-color: #00C6B9 !important;
 }
 
 .light-accent {
   background-color: #74A4E4;
 }
 .dark-accent {
-  background-color: #7A76A1;
+  background-color: #00C6B9;
 }
 .dark-shade {
-  background-color: #2661B1;
+  background-color: #f3595b;
+}
+.light-shade {
+  background-color: #3D4756
 }
 
 .text-main-brand {
-  color: #7674E4;
+  color: #00B3FF;
 }
 .text-light-shade {
-  color: #F7F6EF;
+  color: #3D4756;
 }
 .text-dark-shade {
-  color: #2661B1;
+  color: #f3595b;
+}
+.text-dark-accent {
+  color: #00C6B9;
 }
