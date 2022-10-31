@@ -71,7 +71,7 @@
           name: user,
           weekdays: this.weekdays
         }
-        await axios.post('http://localhost:3000/api/post', postContents).then(res=> {
+        await axios.post('http://146.190.64.18:3000/api/post', postContents).then(res=> {
           console.log(res)
         }).catch(error => {
           console.log(error)
@@ -79,7 +79,7 @@
         })
       },
       async getSessions() {
-        await axios.get('http://localhost:3000/api/session').then(res => {
+        await axios.get('http://146.190.64.18:3000/api/session').then(res => {
           res.data.forEach(item => {
             if(!item.finalSchedule) {
               this.upcomingSessions.push(item.weekOfDate)

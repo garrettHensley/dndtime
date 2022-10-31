@@ -46,7 +46,7 @@ export default {
     async getAvailability() {
       await axios
         .get(
-          `http://localhost:3000/api/availability/${this.session.weekOfDate}`
+          `http://146.190.64.18:3000/api/availability/${this.session.weekOfDate}`
         )
         .then((res) => {
           this.data = res.data;

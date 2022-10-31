@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     async getSessions() {
-      await axios.get("http://localhost:3000/api/session").then((res) => {
+      await axios.get("http://146.190.64.18:3000/api/session").then((res) => {
         res.data.forEach((item) => {
           this.upcomingSessions.push(item)
         })
