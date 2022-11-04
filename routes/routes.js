@@ -32,19 +32,23 @@ router.post("/post", async (req, res) => {
     if (validate()) {
       let exists = await availability.find({ name: name, weekOfDate: weekOfDate })
       if (exists.length) {
+        console.log('here')
         await availability.findOneAndUpdate({ name: name }, {
             weekdays: req.body.weekdays,
         })
         res.status(200).json("Success")
       } else {
+        console.log('no here')
         const dataToSave = await data.save()
-        let usersSubmitted = await session.find({ weekOfDate: "Oct 31" })
+        let usersSubmitted = await session.find({ weekOfDate: weekOfDate })
         usersSubmitted = usersSubmitted[0].usersSubmitted
+        console.log(usersSubmitted)
         await session.findOneAndUpdate(
           { weekOfDate: weekOfDate },
           { usersSubmitted: [name, ...usersSubmitted] }
         )
         res.status(200).json(dataToSave)
+        // res.statusMessage('no')
       }
     } else {
       res.status(401).json({ message: "No u" })
